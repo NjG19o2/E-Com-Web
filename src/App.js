@@ -15,12 +15,14 @@ import GroceryLink from "./components/GroceryLink";
 import FashionLink from "./components/FashionLink";
 import HomeKitchenLink from "./components/HomeKitchenLink";
 import PCsLink from "./components/PCsLink";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Navbar />
+        {/* <Sidebar/> */}
 
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -32,7 +34,6 @@ function App() {
           <Route exact path="/gamingAccessorieslink" element={<GamingAccessoriesLink/>}/>
           <Route exact path="/watcheslink" element={<WatchesLink/>}/>
           <Route exact path="/videoGameslink" element={<VideoGamesLink/>}/>
-         
           <Route exact path="/grocerylink" element={<GroceryLink/>}/>
           <Route exact path="/fashionlink" element={<FashionLink/>}/>
           <Route exact path="/homeKitchenlink" element={<HomeKitchenLink/>}/>

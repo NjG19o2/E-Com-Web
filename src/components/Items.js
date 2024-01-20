@@ -12,9 +12,9 @@ const Items = (props) => {
           <p className="card-text">
             {props.description}
           </p>
-          <a href={props.link} className="btn btn-primary">
+          <Link to={props.link} className="btn btn-primary">
             Go somewhere
-          </a>
+          </Link>
         </div>
       </div>
     </div>
