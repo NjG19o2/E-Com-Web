@@ -1,7 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate= useNavigate()
+  const handleLogout=()=>{
+    localStorage.removeItem('token');
+    navigate("/")
+  }
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -38,7 +43,7 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
-            <form className="d-flex" role="search">
+            {!localStorage.getItem('token')? <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
                 type="search"
@@ -54,7 +59,9 @@ const Navbar = () => {
               <Link className="btn btn-primary mx-1" to="/signup" role="button">
                 SignUp
               </Link>
-            </form>
+            </form>: <button onClick={handleLogout} className="btn btn-primary mx-1">
+                LogOut
+              </button>}
 
             {/* <i class="fa-solid fa-user"></i> */}
 
