@@ -13,7 +13,7 @@ import PCs from '../images/PCs.avif'
 const Itemcard = () => {
   return (
     
-    <div className='container my-4'>
+    <div className='container my-4 '>
         <div className="row">
             <div className="col">
             <Items title="Electronics" image={Electronics} link="/electronicslink" />

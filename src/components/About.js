@@ -1,8 +1,10 @@
-import React from 'react'
-
+import React, { useContext } from "react";
+import itemContext from "../context/items/itemContext";
 const About = () => {
+  const context =useContext(itemContext);
+  const {mode}=context;
   return (
-    <div>
+    <div className={`bg-${mode}`}>
       i am About
     </div>
   )

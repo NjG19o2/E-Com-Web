@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import slide1 from "../images/slide1.jpg";
 import slide2 from "../images/slide2.webp";
 import slide3 from "../images/slide3.jpg";
 import Itemcard from "./Itemcard";
+import itemContext from "../context/items/itemContext";
 
 const Home = () => {
+  const context =useContext(itemContext);
+  const {mode}=context;
   return (
     <>
-      <div id="carouselExampleCaptions" className="carousel slide carousel-fade">
-        <div className="carousel-indicators">
+    <div className={` bg-${mode} `} >
+      <div id="carouselExampleCaptions" className='carousel slide carousel-fade'>
+        <div className="carousel-indicators" >
           <button
             type="button"
             data-bs-target="#carouselExampleCaptions"
@@ -95,6 +99,7 @@ const Home = () => {
       </div>
       <div>
         <Itemcard/>
+      </div>
       </div>
     </>
   );

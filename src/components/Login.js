@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import itemContext from "../context/items/itemContext";
+import alretContext from "../context/items/alertContext";
 
 const Login = () => {
+  const context = useContext(itemContext);
+  const context1=useContext(alretContext);
+  const {mode}=context;
+  const {showAlert}=context1;
   const [credentials,setCredentials]=useState({email:"",password:""})
   const navigate=useNavigate();
   const handleSubmit=async(e)=>{
@@ -21,9 +27,11 @@ const Login = () => {
     if(json.success){
       localStorage.setItem('token',json.authToken);
       navigate("/")
+      showAlert("Logged in successfully","success")
     }
     else{
       console.log("else login error")
+      showAlert("Invalid Details","danger")
     }
 
   }
@@ -31,11 +39,13 @@ const Login = () => {
     setCredentials({...credentials,[e.target.name]:e.target.value})
   }
   return (
-    <div className="container my-4" style={{ width: "40vw" }}>
-      <form onSubmit={handleSubmit}>
-        <h1 className="h3 mb-3 fw-normal">Please Login</h1>
+    <div className={`bg-${mode} text-${mode==='light'?'dark':'light'}`} style={{display:"flex"}} >
+    <div className="container  " style={{ width: "40vw" }}>
+      <form className="" onSubmit={handleSubmit}>
+        <div className="my-4">
+        <h1 className="h3 mb-3 fw-normal ">Please Login</h1>
 
-        <div className="form-floating">
+        <div className="form-floating ">
           <input
             type="email"
             className="form-control my-4"
@@ -75,7 +85,9 @@ const Login = () => {
           Login
         </button>
         <p className="mt-5 mb-3 text-body-secondary">© 2024–2025</p>
+        </div>
       </form>
+    </div>
     </div>
   );
 };

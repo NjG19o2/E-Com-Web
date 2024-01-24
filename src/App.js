@@ -16,20 +16,36 @@ import FashionLink from "./components/FashionLink";
 import HomeKitchenLink from "./components/HomeKitchenLink";
 import PCsLink from "./components/PCsLink";
 import Sidebar from "./components/Sidebar";
+import ItemState from "./context/items/ItemState";
+
+import AlertState from "./context/items/AlertState";
+import Alert from "./components/Alert";
+
+
+
 
 function App() {
   return (
     <>
+    <ItemState>
+      <AlertState>
+    
       <BrowserRouter>
+      
         <Navbar />
+        <Alert/>
+       
         {/* <Sidebar/> */}
-
+        
+        
+       
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/contact" element={<Contactus />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
+          
           <Route exact path="/electronicslink" element={<ElectronicsLink/>}/>
           <Route exact path="/gamingAccessorieslink" element={<GamingAccessoriesLink/>}/>
           <Route exact path="/watcheslink" element={<WatchesLink/>}/>
@@ -38,11 +54,21 @@ function App() {
           <Route exact path="/fashionlink" element={<FashionLink/>}/>
           <Route exact path="/homeKitchenlink" element={<HomeKitchenLink/>}/>
           <Route exact path="/pcslink" element={<PCsLink/>}/>
+          
+
         </Routes>
+      
         <Footer/>
       </BrowserRouter>
+   
+      </AlertState>
+      </ItemState>
     </>
   );
 }
 
 export default App;
+
+
+
+

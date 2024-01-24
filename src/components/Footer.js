@@ -1,9 +1,12 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import itemContext from "../context/items/itemContext";
 const Footer = () => {
+  const context =useContext(itemContext);
+  const {mode}=context;
   return (
-    <div >
-      <footer className="py-5 text-center text-body-secondary bg-body-tertiary" style={{height:"40vh"}}>
+    <>
+    <div className={`bg-${mode}`} style={{margin:" -24px 0 0 0"}}>
+      <footer className="py-5 text-center text-body-secondary " style={{height:"40vh"}}>
         <p>
           2024-2025 E-Com-Web
         </p>
@@ -12,6 +15,7 @@ const Footer = () => {
         </p>
       </footer>
     </div>
+   </>
   );
 };
 

@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import alretContext from "../context/items/alertContext";
+import itemContext from "../context/items/itemContext";
 
 const Signup = () => {
+  const context =useContext(alretContext);
+  const {showAlert}= context;
+  const {mode} = useContext(itemContext);
 
   const [credentials,setCredentials] = useState({name:"",email:"",password:"",cpassword:""});
   const navigate = useNavigate();
@@ -26,9 +31,11 @@ const Signup = () => {
       //save the token and redirect
       localStorage.setItem('token',json.authToken)
       navigate("/")
+     showAlert("Account Created successfully","success")
     }
     else{
       console.log("else error")
+      showAlert("Invalid Details","danger")
     }
    
   }
@@ -39,6 +46,7 @@ const Signup = () => {
 
 
   return (
+    <div className={`bg-${mode} text-${mode==='light'?'dark':'light'}`} style={{display:"flex"}}>
     <div className="container my-4" style={{ width: "40vw" }}>
       <form onSubmit={hadleSubmit}>
         <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
@@ -46,7 +54,7 @@ const Signup = () => {
         <div className="form-floating">
           <input
             type="name"
-            className="form-control my-4"
+            className={`form-control my-4 bg-${mode} text-${mode==='light'?'dark':'light'}`}
             id="name"
             name="name"
             placeholder="name"
@@ -59,7 +67,7 @@ const Signup = () => {
         <div className="form-floating">
           <input
             type="email"
-            className="form-control my-4"
+            className={`form-control my-4 bg-${mode} text-${mode==='light'?'dark':'light'}`}
             id="email"
             name="email"
             placeholder="name@example.com"
@@ -71,7 +79,7 @@ const Signup = () => {
         <div className="form-floating">
           <input
             type="password"
-            className="form-control my-4"
+            className={`form-control my-4 bg-${mode} text-${mode==='light'?'dark':'light'}`}
             id="password"
             name="password"
             placeholder="Password"
@@ -84,7 +92,7 @@ const Signup = () => {
         <div className="form-floating">
           <input
             type="cpassword"
-            className="form-control my-4"
+            className={`form-control my-4 bg-${mode} text-${mode==='light'?'dark':'light'}`}
             id="cpassword"
             name="cpassword"
             placeholder="Password"
@@ -113,6 +121,7 @@ const Signup = () => {
         </button>
         <p className="mt-5 mb-3 text-body-secondary">© 2024–2025</p>
       </form>
+    </div>
     </div>
   );
 };
