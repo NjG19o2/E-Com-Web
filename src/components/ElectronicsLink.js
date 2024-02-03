@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Electronics from '../images/Electronics.jpg'
+import itemContext from "../context/items/itemContext";
 
 const ElectronicsLink = () => {
+  const context = useContext(itemContext);
+  const {mode}=context;
   return (
-<div className="album py-5 bg-body-tertiary">
-    <div className="container">
+    
+<div className={`album py-5 bg-body-tertiary  bg-${mode} text-${mode==='light'?'dark':'light'}`}>
+    <div className={`container bg-${mode} text-${mode==='light'?'dark':'light'}`}>
 
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div className="col">
@@ -147,6 +151,7 @@ const ElectronicsLink = () => {
       </div>
     </div>
   </div>
+  
   )
 }
 

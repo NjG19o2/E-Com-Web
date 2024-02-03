@@ -35,7 +35,7 @@ function App() {
         <Navbar />
         <Alert/>
        
-        {/* <Sidebar/> */}
+    
         
         
        
@@ -54,6 +54,7 @@ function App() {
           <Route exact path="/fashionlink" element={<FashionLink/>}/>
           <Route exact path="/homeKitchenlink" element={<HomeKitchenLink/>}/>
           <Route exact path="/pcslink" element={<PCsLink/>}/>
+          
           
 
         </Routes>

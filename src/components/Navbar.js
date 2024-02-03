@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import itemContext from "../context/items/itemContext";
-import alretContext from "../context/items/alertContext";
+import alertContext from "../context/items/alertContext";
 import Sidebar from "./Sidebar";
 const Navbar = () => {
   const context = useContext(itemContext);
-  const { showAlert } = useContext(alretContext);
+  const { showAlert } = useContext(alertContext);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -13,26 +13,31 @@ const Navbar = () => {
     navigate("/");
     showAlert("Logged Out successfully", "success");
   };
-  const { mode, toggleMode } = context;
+  const { mode} = context;
 
-  useEffect(() => {
-    toggleMode();
-    // eslint-disable-next-line
-  }, []);
 
-  const alertMode = () => {
-    if (mode === "light") {
-      showAlert("Dark mode enabled", "success");
-    } else {
-      showAlert("Light mode enabled", "success");
+
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  const sidebarRef = useRef();
+  const handleSidebar = (event) => {
+    if (!sidebarRef.current || sidebarRef.current.contains(event.target)) {
+      // Clicked inside the sidebar, do nothing
+      return;
     }
-  };
+    setIsSidebarVisible(false);
+ };
 
-  const handleSidebar=()=>{
-    showAlert("sidebar","success")
-    return  <Sidebar />
+ useEffect(() => {
+    // Add the event listener when the sidebar is opened
+    if (isSidebarVisible) {
+      document.addEventListener('mousedown', handleSidebar);
+    }
 
-  }
+    // Remove the event listener when the sidebar is closed or the component unmounts
+    return () => {
+      document.removeEventListener('mousedown', handleSidebar);
+    };
+ }, [isSidebarVisible]);
 
   return (
     <>
@@ -130,30 +135,14 @@ const Navbar = () => {
                   LogOut
                 </button>
               )}
-              <div className={`form-check form-switch text-${mode==='light'?'dark':'light'}`}>
-              <input
-                className="form-check-input"
-                type="checkbox"
-                role="switch"
-                id="flexSwitchCheckDefault"
-                
-                
-               onClick={()=>{toggleMode()}}
-               onChange={alertMode}
-              />
-              <label
-                className="form-check-label"
-                htmlFor="flexSwitchCheckDefault"
-              >
-                Enable DarkMode
-              </label>
-            </div>
-              <div>
-                <i
-                  className="fa-solid fa-user"
-                  onClick={handleSidebar}
-                ></i>
-              </div>
+              
+            <div ref={sidebarRef}>
+          {isSidebarVisible && <Sidebar />}
+        </div>
+        <i
+          className="fa-solid fa-user"
+          onClick={() => setIsSidebarVisible(true)}
+        ></i>
             </div>
           </div>
           

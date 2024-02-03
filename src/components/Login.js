@@ -48,7 +48,7 @@ const Login = () => {
         <div className="form-floating ">
           <input
             type="email"
-            className="form-control my-4"
+            className={`form-control my-4 bg-${mode} text-${mode==='light'?'dark':'light'}`}
             id="email"
             name="email"
             value={credentials.email}
@@ -60,7 +60,7 @@ const Login = () => {
         <div className="form-floating">
           <input
             type="password"
-            className="form-control my-4"
+            className={`form-control my-4 bg-${mode} text-${mode==='light'?'dark':'light'}`}
             id="password"
             name="password"
             value={credentials.password}
