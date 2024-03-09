@@ -2,39 +2,49 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import itemContext from "../context/items/itemContext";
 import alretContext from "../context/items/alertContext";
+import { jwtDecode } from 'jwt-decode';
+
 
 const Login = () => {
   const context = useContext(itemContext);
   const context1=useContext(alretContext);
+
   const {mode}=context;
   const {showAlert}=context1;
   const [credentials,setCredentials]=useState({email:"",password:""})
   const navigate=useNavigate();
-  const handleSubmit=async(e)=>{
-    e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/auth/login", {
-      method: "POST", 
-   
+
+
+  const handleSubmit = async (e) => {
+   e.preventDefault();
+   const response = await fetch("http://localhost:5000/api/auth/login", {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
-      
       },
-   
-      body: JSON.stringify({email:credentials.email,password:credentials.password}), 
-    });
-    const json = await response.json();
-    console.log(json);
-    if(json.success){
-      localStorage.setItem('token',json.authToken);
-      navigate("/")
-      showAlert("Logged in successfully","success")
-    }
-    else{
-      console.log("else login error")
-      showAlert("Invalid Details","danger")
-    }
-
-  }
+      body: JSON.stringify({ email: credentials.email, password: credentials.password }),
+   });
+   const json = await response.json();
+   console.log(json);
+   if (json.success) {
+      localStorage.setItem('token', json.authToken);
+      // Decode the JWT token to extract the userID
+      const decodedToken = jwtDecode(json.authToken);
+      const userID = decodedToken.user.id;
+      if (userID) {
+        localStorage.setItem('userID', String(userID)); // Set userID if it's defined
+      } else {
+        console.error('User ID is undefined');
+        // Handle the case where user ID is not present
+        // Optionally, show an alert to the user or set a default value
+      }
+      navigate("/");
+      showAlert("Logged in successfully", "success");
+   } else {
+      console.log("else login error");
+      showAlert("Invalid Details", "danger");
+   }
+  };
   const onChange=(e)=>{
     setCredentials({...credentials,[e.target.name]:e.target.value})
   }

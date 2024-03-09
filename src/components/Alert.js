@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import alretContext from "../context/items/alertContext";
+import alertContext from "../context/items/alertContext";
 import itemContext from "../context/items/itemContext";
 
 const Alert = () => {
-  const context = useContext(alretContext);
+  const context = useContext(alertContext);
   const { alert } = context;
   const context1 =useContext(itemContext);
   const {mode}=context1;

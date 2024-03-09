@@ -15,61 +15,76 @@ import GroceryLink from "./components/GroceryLink";
 import FashionLink from "./components/FashionLink";
 import HomeKitchenLink from "./components/HomeKitchenLink";
 import PCsLink from "./components/PCsLink";
-import Sidebar from "./components/Sidebar";
 import ItemState from "./context/items/ItemState";
 
 import AlertState from "./context/items/AlertState";
 import Alert from "./components/Alert";
-
-
-
+import Order from "./components/sidebarComponents/Order";
+import Wishlist from "./components/sidebarComponents/Wishlist";
+import Coupons from "./components/sidebarComponents/Coupons";
+import Notification from "./components/sidebarComponents/Notifications";
+import HelpCenter from "./components/sidebarComponents/HelpCenter";
+import Cart from "./components/sidebarComponents/Cart";
+import ProductProvider from './context/items/ProductProvider';
 
 function App() {
   return (
     <>
-    <ItemState>
-      <AlertState>
-    
-      <BrowserRouter>
-      
-        <Navbar />
-        <Alert/>
-       
-    
-        
-        
-       
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/about" element={<About />} />
-          <Route exact path="/contact" element={<Contactus />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/signup" element={<Signup />} />
+      <ItemState>
+        <AlertState>
+        <ProductProvider>
           
-          <Route exact path="/electronicslink" element={<ElectronicsLink/>}/>
-          <Route exact path="/gamingAccessorieslink" element={<GamingAccessoriesLink/>}/>
-          <Route exact path="/watcheslink" element={<WatchesLink/>}/>
-          <Route exact path="/videoGameslink" element={<VideoGamesLink/>}/>
-          <Route exact path="/grocerylink" element={<GroceryLink/>}/>
-          <Route exact path="/fashionlink" element={<FashionLink/>}/>
-          <Route exact path="/homeKitchenlink" element={<HomeKitchenLink/>}/>
-          <Route exact path="/pcslink" element={<PCsLink/>}/>
-          
-          
+          <BrowserRouter>
+            <Navbar />
+            <Alert />
 
-        </Routes>
-      
-        <Footer/>
-      </BrowserRouter>
-   
-      </AlertState>
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/about" element={<About />} />
+              <Route exact path="/contact" element={<Contactus />} />
+              <Route exact path="/login" element={<Login />} />
+              <Route exact path="/signup" element={<Signup />} />
+
+              <Route
+                exact
+                path="/electronicslink"
+                element={<ElectronicsLink />}
+              />
+              <Route
+                exact
+                path="/gamingAccessorieslink"
+                element={<GamingAccessoriesLink />}
+              />
+              <Route exact path="/watcheslink" element={<WatchesLink />} />
+              <Route
+                exact
+                path="/videoGameslink"
+                element={<VideoGamesLink />}
+              />
+              <Route exact path="/grocerylink" element={<GroceryLink />} />
+              <Route exact path="/fashionlink" element={<FashionLink />} />
+              <Route
+                exact
+                path="/homeKitchenlink"
+                element={<HomeKitchenLink />}
+              />
+              <Route exact path="/pcslink" element={<PCsLink />} />
+              <Route exact path="/orders" element={<Order />} />
+              <Route exact path="/wishlist" element={<Wishlist />} />
+              <Route exact path="/coupons" element={<Coupons />} />
+              <Route exact path="/notifications" element={<Notification />} />
+              <Route exact path="/helpcenter" element={<HelpCenter />} />
+              <Route exact path="/cart" element={<Cart/>} />
+            </Routes>
+
+            <Footer />
+          </BrowserRouter>
+         
+          </ProductProvider>
+        </AlertState>
       </ItemState>
     </>
   );
 }
 
 export default App;
-
-
-
-

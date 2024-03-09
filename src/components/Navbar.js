@@ -1,21 +1,12 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import itemContext from "../context/items/itemContext";
-import alertContext from "../context/items/alertContext";
+
 import Sidebar from "./Sidebar";
 const Navbar = () => {
   const context = useContext(itemContext);
-  const { showAlert } = useContext(alertContext);
-  const navigate = useNavigate();
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    navigate("/");
-    showAlert("Logged Out successfully", "success");
-  };
-  const { mode} = context;
-
-
+  const { mode } = context;
 
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const sidebarRef = useRef();
@@ -25,25 +16,30 @@ const Navbar = () => {
       return;
     }
     setIsSidebarVisible(false);
- };
+  };
 
- useEffect(() => {
+  useEffect(() => {
     // Add the event listener when the sidebar is opened
     if (isSidebarVisible) {
-      document.addEventListener('mousedown', handleSidebar);
+      document.addEventListener("mousedown", handleSidebar);
     }
 
     // Remove the event listener when the sidebar is closed or the component unmounts
     return () => {
-      document.removeEventListener('mousedown', handleSidebar);
+      document.removeEventListener("mousedown", handleSidebar);
     };
- }, [isSidebarVisible]);
+  }, [isSidebarVisible]);
 
   return (
     <>
       <div>
-        <nav className={`navbar navbar-expand-lg navber-${mode} bg-${mode} `}>
-        
+        <nav
+          className={`navbar navbar-expand-lg navbar-${mode} bg-${mode} `}
+          style={{
+            boxShadow:
+              "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)",
+          }}
+        >
           <div className="container-fluid">
             <Link
               className={`navbar-brand text-${
@@ -101,51 +97,42 @@ const Navbar = () => {
                   </Link>
                 </li>
               </ul>
-              {!localStorage.getItem("token") ? (
-                <form className="d-flex" role="search">
-                  <input
-                    className="form-control me-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                  />
-                  <button
-                    className="btn btn-outline-primary mx-1"
-                    type="submit"
-                  >
-                    Search
-                  </button>
-                  <Link
-                    className="btn btn-primary mx-1"
-                    to="/login"
-                    role="button"
-                  >
-                    Login
-                  </Link>
-                  <Link
-                    className="btn btn-primary mx-1"
-                    to="/signup"
-                    role="button"
-                  >
-                    SignUp
-                  </Link>
-                </form>
-              ) : (
-                <button onClick={handleLogout} className="btn btn-primary mx-1">
-                  LogOut
+
+              <form
+                className="d-flex"
+                role="search"
+                style={{ position: "absolute", left: "30%", right: "30%" }}
+              >
+                <input
+                  className="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button className="btn btn-outline-primary mx-1" type="submit">
+                  <i className="fa-solid fa-search"></i>
                 </button>
-              )}
-              
-            <div ref={sidebarRef}>
-          {isSidebarVisible && <Sidebar />}
-        </div>
-        <i
-          className="fa-solid fa-user"
-          onClick={() => setIsSidebarVisible(true)}
-        ></i>
+              </form>
+
+              <div ref={sidebarRef}>{isSidebarVisible && <Sidebar />}</div>
+              <div
+                className={`bg-${mode === "light" ? "gray" : "light"}`}
+                style={{
+                  height: "30px",
+                  width: "30px",
+                  borderRadius: "50%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <i
+                  className="fa-solid fa-user "
+                  onClick={() => setIsSidebarVisible(true)}
+                ></i>
+              </div>
             </div>
           </div>
-          
         </nav>
       </div>
     </>
