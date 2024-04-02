@@ -15,7 +15,7 @@ const Itemcard = () => {
     
     <div className='container my-4 '>
         <div className="row">
-            <div className="col">
+            <div className="col ">
             <Items title="Electronics" image={Electronics} link="/electronicslink" />
             </div>
             <div className="col">

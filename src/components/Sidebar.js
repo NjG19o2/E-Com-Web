@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext  } from "react";
 import itemContext from "../context/items/itemContext";
 import alertContext from "../context/items/alertContext";
 import user from "../images/user.jpg";
 import { Link, useNavigate } from "react-router-dom";
-
+import './styles.css'
 
 const Sidebar = () => {
   const context = useContext(itemContext);
@@ -26,7 +26,7 @@ const Sidebar = () => {
     showAlert("Logged Out successfully", "success");
   };
   return (
-    <div style={{ position: "absolute", top: "0", right: "0", width: "280px" }}>
+    <div  style={{ position: "absolute", top: "0", right: "0", width: "280px" }}>
       <div
         className="d-flex flex-column flex-shrink-0 p-3 "
         style={{
