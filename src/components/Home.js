@@ -1,7 +1,4 @@
 import React, { useContext } from "react";
-import slide1 from "../images/slide1.jpg";
-import slide2 from "../images/slide2.webp";
-import slide3 from "../images/slide3.jpg";
 import GameCarousal from "../images/GameCarousal.jpg";
 import BookCarousal from "../images/BookCarousal.jpg";
 import ToyCarousal from "../images/ToyCarousal.jpg";
