@@ -21,7 +21,7 @@ const Footer = () => {
     </div>
 
     <div class="col mb-3">
-      <h5>GET TO KNOW US</h5>
+      <h6>GET TO KNOW US</h6>
       <ul class="nav flex-column">
         
         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact Us</a></li>
@@ -32,7 +32,7 @@ const Footer = () => {
     </div>
 
     <div class="col mb-3">
-      <h5>TRACK OR RETURN/EXCHANGE ORDER</h5>
+      <h6>TRACK OR RETURN/EXCHANGE ORDER</h6>
       <ul class="nav flex-column">
         
         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">TRACK ORDER</a></li>
@@ -43,7 +43,7 @@ const Footer = () => {
     </div>
 
     <div class="col mb-3">
-      <h5>CUSTOMER CARE</h5>
+      <h6>CUSTOMER CARE</h6>
       <ul class="nav flex-column">
        
         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Timings: 10 AM - 7 PM (Mon - Sat)</a></li>

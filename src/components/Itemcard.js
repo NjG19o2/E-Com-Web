@@ -62,7 +62,7 @@ const Itemcard = () => {
           <p className="card-text">
             dwd
           </p>
-          <a href="/" className="btn btn-primary">
+          <a href="/" className="btn btn-outline-secondary">
             View
           </a>
         </div>
@@ -76,7 +76,7 @@ const Itemcard = () => {
           <p className="card-text">
             dwd
           </p>
-          <a href="/" className="btn btn-primary">
+          <a href="/" className="btn btn-outline-secondary">
             View
           </a>
         </div>
@@ -90,7 +90,7 @@ const Itemcard = () => {
           <p className="card-text">
             dwd
           </p>
-          <a href="/" className="btn btn-primary">
+          <a href="/" className="btn btn-outline-secondary">
             View
           </a>
         </div>
@@ -104,7 +104,7 @@ const Itemcard = () => {
           <p className="card-text">
             dwd
           </p>
-          <a href="/" className="btn btn-primary">
+          <a href="/" className="btn btn-outline-secondary">
             View
           </a>
         </div>
@@ -118,7 +118,7 @@ const Itemcard = () => {
           <p className="card-text">
             dwd
           </p>
-          <a href="/" className="btn btn-primary">
+          <a href="/" className="btn btn-outline-secondary">
             View
           </a>
         </div>
@@ -128,7 +128,7 @@ const Itemcard = () => {
 
     
     <div class="d-grid gap-2 col-6 mx-auto">
-  <button class="btn btn-primary" type="button">View All</button>
+  <button class="btn btn-outline-secondary" type="button">View All</button>
 </div>
 
 
@@ -155,7 +155,7 @@ const Itemcard = () => {
           <p className="card-text">
             dwd
           </p>
-          <a href="/" className="btn btn-primary">
+          <a href="/" className="btn btn-outline-secondary">
             View
           </a>
         </div>
@@ -169,7 +169,7 @@ const Itemcard = () => {
           <p className="card-text">
             dwd
           </p>
-          <a href="/" className="btn btn-primary">
+          <a href="/" className="btn btn-outline-secondary">
             View
           </a>
         </div>
@@ -183,7 +183,7 @@ const Itemcard = () => {
           <p className="card-text">
             dwd
           </p>
-          <a href="/" className="btn btn-primary">
+          <a href="/" className="btn btn-outline-secondary">
             View
           </a>
         </div>
@@ -197,7 +197,7 @@ const Itemcard = () => {
           <p className="card-text">
             dwd
           </p>
-          <a href="/" className="btn btn-primary">
+          <a href="/" className="btn btn-outline-secondary">
             View
           </a>
         </div>
@@ -211,7 +211,7 @@ const Itemcard = () => {
           <p className="card-text">
             dwd
           </p>
-          <a href="/" className="btn btn-primary">
+          <a href="/" className="btn btn-outline-secondary">
             View
           </a>
         </div>
@@ -221,7 +221,7 @@ const Itemcard = () => {
 
     
     <div class="d-grid gap-2 col-6 mx-auto">
-  <button class="btn btn-primary" type="button">View All</button>
+  <button class="btn btn-outline-secondary" type="button">View All</button>
 </div>
 
 

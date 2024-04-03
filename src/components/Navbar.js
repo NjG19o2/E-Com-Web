@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import itemContext from "../context/items/itemContext";
 import Sidebar from "./Sidebar";
 
+
 const Navbar = () => {
  const context = useContext(itemContext);
  const { mode } = context;
@@ -65,6 +66,7 @@ const Navbar = () => {
                  className={`nav-link active text-${mode === "light" ? "dark" : "light"}`}
                  aria-current="page"
                  to="/"
+                 
                 >
                  Home
                 </Link>
