@@ -2,6 +2,9 @@ import React, { useContext } from "react";
 import slide1 from "../images/slide1.jpg";
 import slide2 from "../images/slide2.webp";
 import slide3 from "../images/slide3.jpg";
+import GameCarousal from "../images/GameCarousal.jpg";
+import BookCarousal from "../images/BookCarousal.jpg";
+import ToyCarousal from "../images/ToyCarousal.jpg";
 import Itemcard from "./Itemcard";
 import itemContext from "../context/items/itemContext";
 
@@ -37,13 +40,13 @@ const Home = () => {
         <div className="carousel-inner">
           <div className="carousel-item active" data-bs-interval="2000">
             <img
-              src={slide1}
+              src={BookCarousal}
               className="d-block w-100"
               style={{ height: "60vh" }}
               alt="..."
             />
             <div className="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              <h5>Shop Books</h5>
               <p>
                 Some representative placeholder content for the first slide.
               </p>
@@ -51,13 +54,13 @@ const Home = () => {
           </div>
           <div className="carousel-item" data-bs-interval="2000">
             <img
-              src={slide2}
+              src={GameCarousal}
               className="d-block w-100"
               style={{ height: "60vh" }}
               alt="..."
             />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
+              <h5>Essential for Gamers</h5>
               <p>
                 Some representative placeholder content for the second slide.
               </p>
@@ -65,13 +68,13 @@ const Home = () => {
           </div>
           <div className="carousel-item" data-bs-interval="2000">
             <img
-              src={slide3}
+              src={ToyCarousal}
               className="d-block w-100"
               style={{ height: "60vh" }}
               alt="..."
             />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
+              <h5>New Arrivals Toys</h5>
               <p>
                 Some representative placeholder content for the third slide.
               </p>
