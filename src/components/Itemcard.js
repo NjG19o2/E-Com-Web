@@ -138,6 +138,104 @@ const Itemcard = () => {
       
     </div>
   </div>
+ {/* ___________________________________________________________________________________ */}
+ 
+
+
+ 
+    <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+    <h3>New international customers purchased</h3>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3 "style={{marginTop:"4px"}}>
+      <div>
+      <div className={`item card bg-light text-dark`} style={{boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)" }} >
+        <img src={PCs}className="card-img-top" alt="..." />
+        <div className="card-body">
+          <h5 className="card-title">dwd</h5>
+          <p className="card-text">
+            dwd
+          </p>
+          <a href="/" className="btn btn-primary">
+            View
+          </a>
+        </div>
+      </div>
+    </div>
+      <div>
+      <div className={`item card bg-light text-dark`} style={{boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)" }} >
+        <img src={PCs}className="card-img-top" alt="..." />
+        <div className="card-body">
+          <h5 className="card-title">dwd</h5>
+          <p className="card-text">
+            dwd
+          </p>
+          <a href="/" className="btn btn-primary">
+            View
+          </a>
+        </div>
+      </div>
+    </div>
+      <div>
+      <div className={`item card bg-light text-dark`} style={{boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)" }} >
+        <img src={PCs}className="card-img-top" alt="..." />
+        <div className="card-body">
+          <h5 className="card-title">dwd</h5>
+          <p className="card-text">
+            dwd
+          </p>
+          <a href="/" className="btn btn-primary">
+            View
+          </a>
+        </div>
+      </div>
+    </div>
+      <div>
+      <div className={`item card bg-light text-dark`} style={{boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)" }} >
+        <img src={PCs}className="card-img-top" alt="..." />
+        <div className="card-body">
+          <h5 className="card-title">dwd</h5>
+          <p className="card-text">
+            dwd
+          </p>
+          <a href="/" className="btn btn-primary">
+            View
+          </a>
+        </div>
+      </div>
+    </div>
+      <div>
+      <div className={`item card bg-light text-dark`} style={{boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)" }} >
+        <img src={PCs}className="card-img-top" alt="..." />
+        <div className="card-body">
+          <h5 className="card-title">dwd</h5>
+          <p className="card-text">
+            dwd
+          </p>
+          <a href="/" className="btn btn-primary">
+            View
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <div class="d-grid gap-2 col-6 mx-auto">
+  <button class="btn btn-primary" type="button">View All</button>
+</div>
+
+
+      </div>
+      
+      
+      
+    </div>
+  </div>
+
+
+
+
+
     </>
   )
 }

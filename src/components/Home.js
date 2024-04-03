@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <>
     <div className={` bg-${mode} `} >
-      <div id="carouselExampleCaptions" className='carousel slide carousel-fade'>
+      <div id="carouselExampleCaptions" className='carousel slide carousel-fade'  data-bs-ride="carousel">
         <div className="carousel-indicators" >
           <button
             type="button"
@@ -35,7 +35,7 @@ const Home = () => {
           ></button>
         </div>
         <div className="carousel-inner">
-          <div className="carousel-item active">
+          <div className="carousel-item active" data-bs-interval="2000">
             <img
               src={slide1}
               className="d-block w-100"
@@ -49,7 +49,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="carousel-item">
+          <div className="carousel-item" data-bs-interval="2000">
             <img
               src={slide2}
               className="d-block w-100"
@@ -63,7 +63,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="carousel-item">
+          <div className="carousel-item" data-bs-interval="2000">
             <img
               src={slide3}
               className="d-block w-100"
