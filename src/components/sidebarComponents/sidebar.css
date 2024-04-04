@@ -1,0 +1,15 @@
+.header-box {
+    padding: 10px;
+    border: 1px solid #dee2e6; /* Adjust border color as needed */
+    border-radius: 5px; /* Optional: adds rounded corners */
+    background-color: #f8f9fa; /* Optional: adds a background color */
+    height: 100px; /* Fixed height for all boxes */
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+   }
+   
+   .header-box:hover {
+    background-color: #e9ecef; /* Change background color on hover */
+   }
