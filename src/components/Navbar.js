@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import itemContext from "../context/items/itemContext";
 import Sidebar from "./Sidebar";
-
+import './styles.css';
 
 const Navbar = () => {
  const context = useContext(itemContext);
@@ -29,11 +29,27 @@ const Navbar = () => {
     };
  }, [isSidebarVisible]);
 
+ const [isFixed, setIsFixed] = useState(false);
+ useEffect(() => {
+  let prevScrollPos = window.scrollY;
+
+  const handleScroll = () => {
+    const currentScrollPos = window.scrollY;
+    const visible = prevScrollPos > currentScrollPos;
+
+    setIsFixed(visible);
+    prevScrollPos = currentScrollPos;
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
 
  return (
     <>
       <nav
-        className={`navbar navbar-expand-lg navbar-${mode} bg-${mode} `}
+        className={`navbar navbar-expand-lg navbar-${mode} bg-${mode} ${isFixed ? 'fixed-navbar' : ''}`}
         style={{
           boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)",
         }}

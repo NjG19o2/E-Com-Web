@@ -16,3 +16,13 @@
     transform: translateX(0); /* Fully visible */
    }
 
+   .fixed-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
+    transition: top 0.3s ease-in-out; /* Smooth transition for the top property */
+   }
+   body {
+    padding-top: 60px; /* Adjust based on the height of your navbar */
+   }
