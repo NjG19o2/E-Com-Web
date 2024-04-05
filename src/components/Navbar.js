@@ -31,20 +31,19 @@ const Navbar = () => {
 
  const [isFixed, setIsFixed] = useState(false);
  useEffect(() => {
-  let prevScrollPos = window.scrollY;
+ let prevScrollPos = window.scrollY;
 
-  const handleScroll = () => {
+ const handleScroll = () => {
     const currentScrollPos = window.scrollY;
     const visible = prevScrollPos > currentScrollPos;
 
     setIsFixed(visible);
     prevScrollPos = currentScrollPos;
-  };
+ };
 
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
+ window.addEventListener("scroll", handleScroll);
+ return () => window.removeEventListener("scroll", handleScroll);
 }, []);
-
 
  return (
     <>
@@ -82,7 +81,6 @@ const Navbar = () => {
                  className={`nav-link active text-${mode === "light" ? "dark" : "light"}`}
                  aria-current="page"
                  to="/"
-                 
                 >
                  Home
                 </Link>
@@ -116,7 +114,7 @@ const Navbar = () => {
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-outline-primary mx-1" type="submit">
+              <button className="btn btn-outline-danger mx-1" type="submit">
                 <i className="fa-solid fa-search"></i>
               </button>
             </form>
@@ -134,7 +132,7 @@ const Navbar = () => {
               }}
             >
               <i
-                className="fa-solid fa-user "
+                className="fa-solid fa-user"
                 onClick={() => setIsSidebarVisible(true)}
               ></i>
             </div>

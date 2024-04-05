@@ -1,21 +1,22 @@
 .item:hover {
-    transform: scale(1.05); /* Slightly increase the size of the item */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow */
-    
-    background-color: rgba(0, 0, 0, 0.2); /* Darken the background */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, background-color 0.3s ease; /* Smooth transition for all effects */
-   }
+   transform: scale(1.05); /* Slightly increase the size of the item */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow */
+   background-color: rgba(0, 0, 0, 0.2); /* Darken the background */
+   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, background-color 0.3s ease; /* Smooth transition for all effects */
+}
 
-   /* Sidebar.css */
+/* Sidebar.css */
 .sidebar {
-    transition: transform 0.3s ease-out; /* Adjust the property and timing as needed */
-    transform: translateX(-100%); /* Initially hidden */
-   }
-   
-   .sidebar-open {
-    transform: translateX(0); /* Fully visible */
-   }
-/* ----------------------------------------------navbar------------------------------------ */
+   transition: transform 0.3s ease-out; /* Adjust the property and timing as needed */
+   transform: translateX(-100%); /* Initially hidden */
+}
+
+.sidebar-open {
+   transform: translateX(0); /* Fully visible */
+}
+
+
+/* Navbar.css */
 .fixed-navbar {
    position: fixed;
    top: 0;
@@ -26,4 +27,21 @@
 
 body {
    padding-top: 60px; /* Adjust based on the height of your navbar */
+}
+
+.fa-solid.fa-user {
+   transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+}
+
+.fa-solid.fa-user:hover {
+   transform: scale(1.1); /* Slightly increase the size of the icon */
+   color: #ff0055; /* Change the color of the icon on hover */
+   cursor: pointer;
+}
+
+/* Hover effect for navbar links */
+.navbar-nav .nav-link:hover {
+   color: #ff0055 !important; /* Use !important to ensure this rule takes precedence */
+   transform: scale(1.05); /* Slightly increase the size of the link */
+   transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transform */
 }
