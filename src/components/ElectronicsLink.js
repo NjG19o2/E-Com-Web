@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Electronics from "../images/Electronics.jpg";
 import itemContext from "../context/items/itemContext";
 import ProductContext from "../context/items/ProductContext"; // Import the ProductContext
-import './styles.css'; // Import the CSS file
+import "./styles.css"; // Import the CSS file
 const ElectronicsLink = () => {
   const context = useContext(itemContext);
   const { mode } = context;
