@@ -1,3 +1,4 @@
+/* -------------------------------help center-------------------------------------------- */
 .header-box {
     padding: 10px;
     border: 1px solid #dee2e6; /* Adjust border color as needed */
@@ -12,4 +13,54 @@
    
    .header-box:hover {
     background-color: #e9ecef; /* Change background color on hover */
+   }
+/* --------------------------cart------------------------------------------------ */
+
+   .cart-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   }
+   
+   .empty-cart-message {
+    color: #6c757d;
+   }
+   
+   .cart-items-list {
+    list-style-type: none;
+    padding: 0;
+   }
+   
+   .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6;
+   }
+   
+   .item-details {
+    flex: 1;
+   }
+   
+   .item-actions {
+    display: flex;
+    align-items: center;
+   }
+   
+   .remove-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 10px;
+   }
+   
+   .quantity-input {
+    width: 50px;
+    text-align: center;
    }
