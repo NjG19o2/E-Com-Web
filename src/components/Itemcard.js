@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Items from './Items'
 import Electronics from '../images/Electronics.jpg'
 import GamingAccessories from '../images/GamingAccessories.jpg'
@@ -8,9 +8,12 @@ import Grocery from '../images/Grocery.jpg'
 import Fashion from '../images/Fashion.webp'
 import HomeKitchen from '../images/HomeKitchen.avif'
 import PCs from '../images/PCs.avif'
+import itemContext from "../context/items/itemContext";
 
 
 const Itemcard = () => {
+  const context = useContext(itemContext);
+  const { mode } = context;
   return (
     <>
     <div className='container my-4 '>
@@ -50,9 +53,9 @@ const Itemcard = () => {
 
 
  
-    <div class="album py-5 bg-body-tertiary">
-    <div class="container">
-    <h3>Best Sellers in Sports & Outdoors</h3>
+ <div className={`album py-5 bg-body-tertiary bg-${mode} text-${mode === 'light' ? 'dark' : 'light'}`}>
+        <div className={`container bg-${mode} text-${mode === 'light' ? 'dark' : 'light'}`}>
+          <h3 className={`text-${mode === 'light' ? 'dark' : 'light'}`}>Best Sellers in Sports & Outdoors</h3>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3 "style={{marginTop:"4px"}}>
       <div>
       <div className={`item card bg-light text-dark`} style={{boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)" }} >
@@ -143,9 +146,9 @@ const Itemcard = () => {
 
 
  
-    <div class="album py-5 bg-body-tertiary">
-    <div class="container">
-    <h3>New international customers purchased</h3>
+ <div className={`album py-5 bg-body-tertiary bg-${mode} text-${mode === 'light' ? 'dark' : 'light'}`}>
+        <div className={`container bg-${mode} text-${mode === 'light' ? 'dark' : 'light'}`}>
+          <h3 className={`text-${mode === 'light' ? 'dark' : 'light'}`}>New international customers purchased</h3>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3 "style={{marginTop:"4px"}}>
       <div>
       <div className={`item card bg-light text-dark`} style={{boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)" }} >

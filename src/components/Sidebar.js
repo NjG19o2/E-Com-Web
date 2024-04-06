@@ -34,7 +34,7 @@ const Sidebar = () => {
           height: "100vh",
           width: "287px",
           position: "fixed",
-          background: "gray",
+          background: "#efecec",
         }}
       >
         
